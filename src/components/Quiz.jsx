@@ -49,7 +49,7 @@ const Quiz = () => {
     {!showConfetti && <div className={`relative w-[80%] lg:w-[35%] top-0 h-64 text-white font-bold rounded-3xl mx-auto text-center ${!showResult ? 'border-2' : ''}`}>
       {!showResult && (<>
       <p className='text-xl sm:text-2xl md:text-3xl mt-6 md:mt-0 p-4'>{questions[currentQuestion].pregunta}</p>
-      <div className=' absolute left-[4%] flex -bottom-20'>
+      <div className=' absolute left-3 flex -bottom-10 sm:-bottom-20'>
         <button onClick={() => handleAnswer('Falso')} className='hover:scale-105 duration-300'><img src={falso} alt=''/></button>
         <button onClick={() => handleAnswer('Verdadero')} className='hover:scale-105 duration-300'><img src={verdadero} alt=''/></button>
       </div>
@@ -67,7 +67,7 @@ const Quiz = () => {
         }
     </div>}
     {showConfetti && (
-        <div className=' w-full text-white font-bold mx-auto text-center text-xl md:text-2xl'>
+        <div className=' w-[90%] text-white font-bold mx-auto text-center text-lg md:text-2xl'>
           <div className='w-[30%] lg:w-[10%] mx-auto'>
           <ConfettiExplosion 
           force={8} 
@@ -78,11 +78,11 @@ const Quiz = () => {
           />
           </div>
           <p>¡Gracias por participar del juego!</p>
-          <p className=''>Tu total de puntos fue: {score}</p>
-          <p className='py-5'>¡Por un tránsito más seguro para todos!</p>
+          <p className=''>Tu total de puntos fue: <span className=' text-yellow-400'>{score}</span></p>
+          <p className='py-4'>¡Por un tránsito más seguro para todos!</p>
           <p className='pb-2'>Seguinos para más recomendaciones: </p>
           <a href='https://www.facebook.com/seguridadseguros'><FaFacebook size={40} className='mx-auto inline-block' /></a> <a href="https://www.instagram.com/seguridadsegurospy/"><FaInstagram size={40} className='mx-auto inline-block' /> </a> <a href="https://www.linkedin.com/company/seguridad-seguros/"><FaLinkedin size={40} className='mx-auto inline-block' /></a>
-          <p className='pb-5 pt-2'>@seguridadsegurospy </p>
+          <p className='pb-4 pt-2'>@seguridadsegurospy </p>
           <p className=' mx-auto text-center w-full'><FaWhatsapp size={30} className='inline-block mx-auto' /> +595 21 249 1000 </p>
           <p>www.seguridadsegurospy.com.py</p>
           
@@ -90,10 +90,7 @@ const Quiz = () => {
         </div>
       )}
       <div className='absolute bottom-5 right-5 md:right-1/4 text-white font-bold'>
-        <h1 className='text-2xl lg:text-3xl'>{currentQuestion+1} / 12 </h1>
-      </div>
-      <div className='absolute top-5 lg:right-1/4 text-white font-bold'>
-
+        <h1 className='text-2xl lg:text-3xl'>{currentQuestion+1} / {questions.length} </h1>
       </div>
     </>
   );
