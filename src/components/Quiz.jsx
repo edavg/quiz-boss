@@ -48,26 +48,26 @@ const Quiz = () => {
     <>
     {!showConfetti && <div className={`relative w-[80%] lg:w-[35%] top-0 h-64 text-white font-bold rounded-3xl mx-auto text-center ${!showResult ? 'border-2' : ''}`}>
       {!showResult && (<>
-      <p className='text-2xl md:text-3xl mt-8 md:mt-4 p-4'>{questions[currentQuestion].pregunta}</p>
-      <div className=' absolute left-[5%] flex -bottom-20'>
+      <p className='text-xl sm:text-2xl md:text-3xl mt-6 md:mt-0 p-4'>{questions[currentQuestion].pregunta}</p>
+      <div className=' absolute left-[4%] flex -bottom-20'>
         <button onClick={() => handleAnswer('Falso')} className='hover:scale-105 duration-300'><img src={falso} alt=''/></button>
         <button onClick={() => handleAnswer('Verdadero')} className='hover:scale-105 duration-300'><img src={verdadero} alt=''/></button>
       </div>
       </>)}
       
       {showResult &&
-        <div className=' text-center text-xl md:text-2xl mx-auto w-[100%] mt-6'>
+        <div className=' text-center text-xl md:text-2xl mx-auto w-[100%] mt-2'>
             {isCorrect ?  <div className=' w-full mx-auto'><ConfettiExplosion width={2000} /><audio src={yay} autoPlay /><img src={verdaderook} alt="" className='w-72 mx-auto' /></div> : <div><audio src={audio} autoPlay /><img src={falsook} alt="" className='w-72 mx-auto'/></div>}
           <p>{isCorrect ? questions[currentQuestion].correcta : questions[currentQuestion].incorrecta}</p>
           
           <button 
-          className=' mt-10  w-52 md:w-72 hover:scale-105 duration-300 '
+          className='mt-10 w-52 md:w-72 hover:scale-105 duration-300 '
           onClick={handleNextQuestion}><img src={siguiente} alt='' /></button>
         </div>
         }
     </div>}
     {showConfetti && (
-        <div className=' w-full text-white font-bold mx-auto text-center text-2xl'>
+        <div className=' w-full text-white font-bold mx-auto text-center text-xl md:text-2xl'>
           <div className='w-[30%] lg:w-[10%] mx-auto'>
           <ConfettiExplosion 
           force={8} 
@@ -80,7 +80,7 @@ const Quiz = () => {
           <p>¡Gracias por participar del juego!</p>
           <p className=''>Tu total de puntos fue: {score}</p>
           <p className='py-5'>¡Por un tránsito más seguro para todos!</p>
-          <p>Seguinos para más recomendaciones: </p>
+          <p className='pb-2'>Seguinos para más recomendaciones: </p>
           <a href='https://www.facebook.com/seguridadseguros'><FaFacebook size={40} className='mx-auto inline-block' /></a> <a href="https://www.instagram.com/seguridadsegurospy/"><FaInstagram size={40} className='mx-auto inline-block' /> </a> <a href="https://www.linkedin.com/company/seguridad-seguros/"><FaLinkedin size={40} className='mx-auto inline-block' /></a>
           <p className='pb-5 pt-2'>@seguridadsegurospy </p>
           <p className=' mx-auto text-center w-full'><FaWhatsapp size={30} className='inline-block mx-auto' /> +595 21 249 1000 </p>
