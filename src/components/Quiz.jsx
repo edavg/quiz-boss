@@ -92,8 +92,8 @@ const Quiz = () => {
       <div className='absolute bottom-5 right-5 md:right-1/4 text-white font-bold'>
         <h1 className='text-2xl lg:text-3xl'>{currentQuestion+1} / 12 </h1>
       </div>
-      <div className='absolute bottom-5 md:bottom-0 md:top-5 left-5 lg:right-1/4 text-white font-bold'>
-      <p className='text-2xl'>{!showConfetti && `Puntaje: ${score}`}</p>
+      <div className='absolute top-5 lg:right-1/4 text-white font-bold'>
+
       </div>
     </>
   );
