@@ -56,18 +56,18 @@ const Quiz = () => {
       </>)}
       
       {showResult &&
-        <div className=' text-center text-xl md:text-2xl mx-auto w-[100%] mt-2'>
-            {isCorrect ?  <div className=' w-full mx-auto'><ConfettiExplosion width={2000} /><audio src={yay} autoPlay /><img src={verdaderook} alt="" className='w-72 mx-auto' /></div> : <div><audio src={audio} autoPlay /><img src={falsook} alt="" className='w-72 mx-auto'/></div>}
+        <div className=' text-center text-lg md:text-2xl mx-auto w-[100%] mt-2'>
+            {isCorrect ?  <div className=' w-full mx-auto'><ConfettiExplosion width={2000} /><audio src={yay} autoPlay /><img src={verdaderook} alt="" className=' w-56 md:w-72 mx-auto' /></div> : <div><audio src={audio} autoPlay /><img src={falsook} alt="" className='w-56 md:w-72 mx-auto'/></div>}
           <p>{isCorrect ? questions[currentQuestion].correcta : questions[currentQuestion].incorrecta}</p>
           
           <button 
-          className='mt-10 w-52 md:w-72 hover:scale-105 duration-300 '
+          className='mt-4 md:mt-10 w-52 md:w-72 hover:scale-105 duration-300 '
           onClick={handleNextQuestion}><img src={siguiente} alt='' /></button>
         </div>
         }
     </div>}
     {showConfetti && (
-        <div className=' w-[90%] text-white font-bold mx-auto text-center text-lg md:text-2xl'>
+        <div className=' w-[90%] text-white font-bold mx-auto text-center text-base md:text-2xl'>
           <div className='w-[30%] lg:w-[10%] mx-auto'>
           <ConfettiExplosion 
           force={8} 
@@ -81,12 +81,12 @@ const Quiz = () => {
           <p className=''>Tu total de puntos fue: <span className=' text-yellow-400'>{score}</span></p>
           <p className='py-4'>¡Por un tránsito más seguro para todos!</p>
           <p className='pb-2'>Seguinos para más recomendaciones: </p>
-          <a href='https://www.facebook.com/seguridadseguros'><FaFacebook size={40} className='mx-auto inline-block' /></a> <a href="https://www.instagram.com/seguridadsegurospy/"><FaInstagram size={40} className='mx-auto inline-block' /> </a> <a href="https://www.linkedin.com/company/seguridad-seguros/"><FaLinkedin size={40} className='mx-auto inline-block' /></a>
+          <a href='https://www.facebook.com/seguridadseguros'><FaFacebook size={30} className='mx-auto inline-block' /></a> <a href="https://www.instagram.com/seguridadsegurospy/"><FaInstagram size={30} className='mx-auto inline-block' /> </a> <a href="https://www.linkedin.com/company/seguridad-seguros/"><FaLinkedin size={30} className='mx-auto inline-block' /></a>
           <p className='pb-4 pt-2'>@seguridadsegurospy </p>
           <p className=' mx-auto text-center w-full'><FaWhatsapp size={30} className='inline-block mx-auto' /> +595 21 249 1000 </p>
           <p>www.seguridadsegurospy.com.py</p>
           
-          <button onClick={handleRestartQuiz} className='  bg-sky-600 rounded-xl p-2 mt-10 hover:bg-sky-500'>Reiniciar</button>
+          <button onClick={handleRestartQuiz} className='  bg-sky-600 rounded-xl p-2 mt-5 md:mt-10 hover:bg-sky-500'>Reiniciar</button>
         </div>
       )}
       <div className='absolute bottom-5 right-5 md:right-1/4 text-white font-bold'>
