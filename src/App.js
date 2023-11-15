@@ -9,6 +9,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/Quiz' element={<QuizPage />} />
+      <Route path='/*' element={<Home />} />
     </Routes>
     </>
   );
