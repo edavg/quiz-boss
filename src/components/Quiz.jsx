@@ -13,6 +13,7 @@ import { TbWorldSearch } from "react-icons/tb";
 import totalpuntos from '../assets/toralpuntos.png'
 import { TiSocialLinkedin } from "react-icons/ti";
 import { IoLogoInstagram } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 
 const Quiz = () => {
@@ -43,9 +44,6 @@ const Quiz = () => {
     }
   };
 
-  const handleRestartQuiz = () => {
-    window.location.reload()
-  };
  
 
   return (
@@ -89,7 +87,7 @@ const Quiz = () => {
               </p>
           </div>
           <p className='pb-2 md:pb-4 font-thin -mt-2 md:mt-0'>¡Por un tránsito más seguro para todos!</p>
-          <button onClick={handleRestartQuiz} className='  bg-transparent border-[1px] rounded-lg p-2 md:text-xl hover:bg-sky-500'>Reiniciar juego</button>
+          <Link to='/'><button className='  bg-transparent border-[1px] rounded-lg p-2 md:text-xl hover:bg-sky-500'>Reiniciar juego</button></Link>
           <div className='md:grid grid-cols-2 mt-2 md:mt-8 text-base md:text-lg md:text-left mx-auto w-full lg:w-[65%]'>
             {/* Primera columna */}
             <div className='col-span-1'>
