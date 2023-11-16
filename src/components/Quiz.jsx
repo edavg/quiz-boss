@@ -88,9 +88,9 @@ const Quiz = () => {
               Total de puntos: <span className='text-yellow-400'>{score}</span>
               </p>
           </div>
-          <p className='pb-4 font-thin'>¡Por un tránsito más seguro para todos!</p>
+          <p className='pb-2 md:pb-4 font-thin -mt-2 md:mt-0'>¡Por un tránsito más seguro para todos!</p>
           <button onClick={handleRestartQuiz} className='  bg-transparent border-[1px] rounded-lg p-2 md:text-xl hover:bg-sky-500'>Reiniciar juego</button>
-          <div className='grid grid-cols-2 mt-5 md:mt-8 text-base md:text-lg md:text-left mx-auto w-full lg:w-[65%]'>
+          <div className='md:grid grid-cols-2 mt-2 md:mt-8 text-base md:text-lg md:text-left mx-auto w-full lg:w-[65%]'>
             {/* Primera columna */}
             <div className='col-span-1'>
               <div className='flex flex-col md:flex-row items-center'>
@@ -101,7 +101,7 @@ const Quiz = () => {
                   <a href="https://www.linkedin.com/company/seguridad-seguros/"><TiSocialLinkedin size={25} className='bg-white text-sky-950 rounded-full mr-1' /></a>
                 </div>
                 </div>
-                <p className='pb-4 pt-2 font-thin'>@seguridadsegurospy </p>
+                <p className='pt-2 font-thin'>@seguridadsegurospy </p>
                 </div>
             {/* Segunda columna */}
             <div className='col-span-1 lg:ml-20 xl:ml-24 pt-2 m:pt-0'>
