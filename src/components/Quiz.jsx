@@ -8,7 +8,11 @@ import ConfettiExplosion from 'react-confetti-explosion';
 import audio from '../assets/crowd.mp3'
 import siguiente from '../assets/siguiente.png'
 import yay from '../assets/yay.mp3'
-import { FaWhatsapp, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaWhatsapp, FaFacebook } from 'react-icons/fa'
+import { TbWorldSearch } from "react-icons/tb";
+import totalpuntos from '../assets/toralpuntos.png'
+import { TiSocialLinkedin } from "react-icons/ti";
+import { IoLogoInstagram } from "react-icons/io";
 
 
 const Quiz = () => {
@@ -78,19 +82,43 @@ const Quiz = () => {
           />
           </div>
           <p>¡Gracias por participar del juego!</p>
-          <p className=''>Tu total de puntos fue: <span className=' text-yellow-400'>{score}</span></p>
-          <p className='py-4'>¡Por un tránsito más seguro para todos!</p>
-          <p className='pb-2'>Seguinos para más recomendaciones: </p>
-          <a href='https://www.facebook.com/seguridadseguros'><FaFacebook size={30} className='mx-auto inline-block' /></a> <a href="https://www.instagram.com/seguridadsegurospy/"><FaInstagram size={30} className='mx-auto inline-block' /> </a> <a href="https://www.linkedin.com/company/seguridad-seguros/"><FaLinkedin size={30} className='mx-auto inline-block' /></a>
-          <p className='pb-4 pt-2'>@seguridadsegurospy </p>
-          <p className=' mx-auto text-center w-full'><FaWhatsapp size={30} className='inline-block mx-auto' /> +595 21 249 1000 </p>
-          <p>www.seguridadsegurospy.com.py</p>
-          
-          <button onClick={handleRestartQuiz} className='  bg-sky-600 rounded-xl p-2 mt-5 md:mt-10 hover:bg-sky-500'>Reiniciar</button>
+          <div className='mx-auto relative w-80'>
+            <img src={totalpuntos} alt="" className='w-52 md:w-72 mx-auto' />
+            <p className='absolute top-6 md:top-9 left-0 right-0 bottom-0 text-white text-center'>
+              Total de puntos: <span className='text-yellow-400'>{score}</span>
+              </p>
+          </div>
+          <p className='pb-4 font-thin'>¡Por un tránsito más seguro para todos!</p>
+          <button onClick={handleRestartQuiz} className='  bg-transparent border-[1px] rounded-lg p-2 md:text-xl hover:bg-sky-500'>Reiniciar juego</button>
+          <div className='grid grid-cols-2 mt-5 md:mt-8 text-base md:text-lg md:text-left mx-auto w-full lg:w-[65%]'>
+            {/* Primera columna */}
+            <div className='col-span-1'>
+              <div className='flex flex-col md:flex-row items-center'>
+                <p className='pb-2 font-thin'>Seguinos para más recomendaciones: </p>
+                <div className='flex'>
+                  <a href='https://www.facebook.com/seguridadseguros'><FaFacebook size={25} className='lg:ml-2 mr-1 rounded-full' /></a>
+                  <a href="https://www.instagram.com/seguridadsegurospy/"><IoLogoInstagram size={25} className='bg-white text-sky-950 rounded-full mr-1' /> </a>
+                  <a href="https://www.linkedin.com/company/seguridad-seguros/"><TiSocialLinkedin size={25} className='bg-white text-sky-950 rounded-full mr-1' /></a>
+                </div>
+                </div>
+                <p className='pb-4 pt-2 font-thin'>@seguridadsegurospy </p>
+                </div>
+            {/* Segunda columna */}
+            <div className='col-span-1 lg:ml-20 xl:ml-24 pt-2 m:pt-0'>
+              <div className='flex items-center flex-col md:flex-row font-normal md:font-bold'>
+                <FaWhatsapp size={25} className='mr-2 bg-white text-sky-950 rounded-full' />
+                <p className='pb-2'> +595 21 249 1000 </p>
+              </div>
+              <div className='flex flex-col md:flex-row items-center font-normal md:font-bold'>
+                <TbWorldSearch size={25} className='mr-2 rounded-full'/>
+                <p className='text-sm md:text-lg'>www.seguridadseguros.com.py</p>
+              </div>
+              </div>
+              </div>
         </div>
       )}
       <div className='absolute bottom-5 right-5 md:right-1/4 text-white font-bold'>
-        <h1 className='text-2xl lg:text-3xl'>{currentQuestion+1} / {questions.length} </h1>
+        <h1 className='text-2xl lg:text-3xl'>{ !showConfetti && `${currentQuestion+1} / ${questions.length}`}</h1>
       </div>
     </>
   );
